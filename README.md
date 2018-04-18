@@ -1,11 +1,11 @@
 # OpenCV 2.x Dockerfile for development
-
-Build the image
+## Building
+To build the image just run:
 
 ```bash
 $ docker build . -t <image-name>
 ```
-
+## Running container
 To run it you have to adjust the permission to the X server host. So run the following command in the docker host machine:
 
 ```bash
@@ -25,8 +25,9 @@ $ docker run -it \
     --device /dev/video0 \
     <image-name>
 ```
+Note that we map the host camera divice to be used by docker container.
 
-when you finish, disable permission to connect to your X server host:
+When you finish, disable permission to connect to your X server host:
 
 ```bash
 $ xhost -local:root
